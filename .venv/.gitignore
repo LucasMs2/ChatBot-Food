@@ -1,0 +1,35 @@
+# Ambiente Virtual
+.venv/
+venv/
+ENV/
+env/
+*/activate_this.py
+
+cardapio.txt
+
+
+# Arquivos de Bytecode e Cache do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Arquivos de IDEs (exemplo para PyCharm, VSCode)
+.idea/
+.vscode/
+
+# Arquivos de sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de configuração com segredos (se você não estiver usando variáveis de ambiente para TUDO)
+# Exemplo: se você tivesse um config_secrets.py não versionado
+# config_secrets.py
+
+# Arquivos de dependências baixados (se não estiverem no venv)
+# Exemplo: pasta de downloads do pip, se configurada
+# pip_downloads/
+
+# Arquivos de teste do PyInstaller
+build/
+dist/
+*.spec
