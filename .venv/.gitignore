@@ -5,7 +5,9 @@ ENV/
 env/
 */activate_this.py
 
+##Cardapio de teste
 cardapio.txt
+
 
 
 # Arquivos de Bytecode e Cache do Python
