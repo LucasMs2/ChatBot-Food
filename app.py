@@ -58,4 +58,4 @@ def webhook():
 
 if __name__ == '__main__':
     print("Para rodar o servidor Flask, execute: flask run")
-    print("Ou, para testar no terminal, execute diretamente: python terminal_tester.py")
+    print("Ou, para testar no terminal, execute diretamente: python terminal_test.py")

@@ -5,27 +5,30 @@ import chatbot_logic
 def print_interactive_options(interactive_payload):
     interactive_type = interactive_payload.get('type')
     print("\n[BOT]: --- Opções Clicáveis (Simulação) ---")
+
     if interactive_type == 'button':
         buttons = interactive_payload.get('action', {}).get('buttons', [])
         for button in buttons:
             title = button.get('reply', {}).get('title', 'Sem título')
             button_id = button.get('reply', {}).get('id', 'sem_id')
-            print(f"[BOT]: Título: {title} | Digite o ID: {button_id}")
+            print(f"  • {title}   | ID: {button_id}")
+
     elif interactive_type == 'list':
         list_button_title = interactive_payload.get('action', {}).get('button', 'Ver Opções')
-        print(f"[BOT]: (O usuário clicaria no botão: '{list_button_title}')")
+        print(f"(O usuário clicaria no botão: '{list_button_title}')")
         for section in interactive_payload.get('action', {}).get('sections', []):
-            print(f"[BOT]: -- Seção: {section.get('title', '')} --")
+            print(f"\n-- Seção: {section.get('title', '')} --")
             for row in section.get('rows', []):
                 title = row.get('title', 'Sem título')
                 row_id = row.get('id', 'sem_id')
-                print(f"[BOT]: Título: {title} | Digite o ID: {row_id}")
+                print(f"  • {title}   | ID: {row_id}")
+
     print("----------------------------------------")
 
 
 def terminal_test_chat():
     print("--- Iniciando Teste do Chatbot no Terminal ---")
-    print("Digite 'sair' a qualquer momento para encerrar.")
+    print("Digite 'exit' a qualquer momento para encerrar.")
     print("----------------------------------------------")
     test_user_id = "terminal_user_001"
     test_user_name = "Cliente Terminal"
@@ -45,7 +48,7 @@ def terminal_test_chat():
             print(f"[BOT - ERRO]: Tipo de resposta inesperado: {bot_response}")
 
         user_input = input(f"\n[{test_user_name}]: ")
-        if user_input.lower() == 'sair':
+        if user_input.lower() == 'exit':
             print("\n--- Teste encerrado ---");
             break
         bot_response = chatbot_logic.handle_message(test_user_id, test_user_name, user_input)
